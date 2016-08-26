@@ -9,7 +9,7 @@
         Ext.onReady(init);
     </script>
 <body>
-亲爱的${toUserName}，你好！
+${toUserName}，你好！
 
     ${message}
 
