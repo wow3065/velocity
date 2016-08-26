@@ -1,0 +1,10 @@
+<html>
+<body>
+亲爱的${user}，你好！
+
+    ${name}
+
+祝：开心！
+${name}
+</body>
+</html>
