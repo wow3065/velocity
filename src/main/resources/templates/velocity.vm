@@ -1,10 +1,9 @@
 <html>
+<meta charset="UTF-8">
 <body>
-亲爱的${user}，你好！
+${user}
 
     ${name}
 
-祝：开心！
-${name}
 </body>
 </html>

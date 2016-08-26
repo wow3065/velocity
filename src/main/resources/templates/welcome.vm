@@ -1,4 +1,13 @@
 <html>
+<meta charset="UTF-8">
+<link href="/extjs/resources/css/ext-all-neptune.css" rel="stylesheet" />
+<script src="/extjs/bootstrap.js"></script>
+<script type="text/javascript">
+        function init() {
+            Ext.MessageBox.alert("ExtJS", "Hello ExtJS");
+        }
+        Ext.onReady(init);
+    </script>
 <body>
 亲爱的${toUserName}，你好！
 

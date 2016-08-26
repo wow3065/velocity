@@ -3,6 +3,7 @@ package com.example.controller;
 import java.io.StringWriter;
 import java.util.Date;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -26,27 +27,32 @@ public class Welcome {
 	}
 	
 	@RequestMapping("/velocity")
-	public void velocitu(){
-		/* first, we init the runtime engine.  Defaults are fine. */
-        Velocity.init();
-        
-        //Velocity.setProperty("file.resource.loader.path", "classpath:/resources/templates");
+	public void velocity(){
+
+		Velocity.init();
+
         /* lets make a Context and put data into it */
+
         VelocityContext context = new VelocityContext();
 
-        context.put("user", "Velocity");
-        context.put("name", "Jakarta");
+        context.put("name", "Velocity");
+        context.put("user", "Jakarta");
 
         /* lets render a template */
+
         StringWriter w = new StringWriter();
-
-        Velocity.mergeTemplate("velocity.vm", context, w );
+        /*
+        Velocity.mergeTemplate("D:/mars/velocity/target/classes/templates", context, w );
         System.out.println(" template : " + w );
-
+        */
+        Template template = Velocity.getTemplate("src/main/resources/templates/velocity.vm");
+        
         /* lets make our own string to render */
+
         String s = "We are using $project $name to render this.";
         w = new StringWriter();
-        Velocity.evaluate( context, w, "mystring", s );
+        //Velocity.evaluate( context, w, "mystring", s );
+        template.merge(context, w);
         System.out.println(" string : " + w );
 	}
 
